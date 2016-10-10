@@ -12,9 +12,15 @@
       $scope.diagnose = "";
 
       $scope.checkDiet = function(){
+
+        if ($scope.lunchItems == ""){
+          $scope.diagnose = "Please enter data first";
+          return;
+        }
+
         var itemsCount = $scope.lunchItems.split(',').length;
 
-        $scope.diagnose=itemsCount <= 3 ? "Enjoy!" : "Too much!";
+        $scope.diagnose = itemsCount <= 3 ? "Enjoy!" : "Too much!";
       }
     }
 }
